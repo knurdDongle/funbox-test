@@ -1,0 +1,117 @@
+.card
+	position relative
+	z-index 0
+	margin-top 43px
+	display inline-block
+	width 320px
+	height 437px
+	font-size 0
+	cursor pointer
+	background-color $blue
+	border-bottom-right-radius 12px
+	border-bottom-left-radius 12px
+
+	&:before,
+	&:after
+		position absolute
+		top -43px
+		display inline-block
+		width 160px
+		height 43px
+		content ''
+		background-color inherit
+
+	&:before
+		left 21px
+		transform skew(-45deg)
+
+	&:after
+		right 0
+		border-top-right-radius 12px
+
+	&__bg,
+	&__inner
+		display inline-block
+		width 312px
+		height 433px
+		border-bottom-right-radius 8px
+		border-bottom-left-radius 8px
+
+	&__bg
+		position relative
+		z-index 1
+		background-color #f2f2f2
+
+		&:before,
+		&:after
+			position absolute
+			top -39px
+			display inline-block
+			width 156px
+			height 39px
+			content ''
+			background-color inherit
+
+		&:before
+			left 20px
+			transform skew(-45deg)
+
+		&:after
+			z-index -1
+			right 0
+			border-top-right-radius 8px
+
+	&__inner
+		z-index 2
+		padding-left 42px
+		font-family trebuchet-ms
+		text-align left
+		background-image url('../images/card-bg.png')
+		background-repeat no-repeat
+		background-position bottom
+
+	&__question,
+	&__label
+		position absolute
+		top -20px
+		margin-left 2px
+		font-size 16px
+
+	&__question
+		display none
+		color $light-red
+
+	&__label
+		color $grey
+
+	&__title,
+	&__descr,
+	&__specs
+		display block
+		float left
+
+	&__title
+		margin-top 7px
+		font-size 48px
+		font-weight bold
+		color #000
+
+	&__descr
+		margin-top 3px
+		margin-left 2px
+		font-size 24px
+		font-weight bold
+		color #000
+
+	&__specs
+		margin-top 19px
+		margin-left 3px
+		width 100%
+		font-size 14px
+		line-height 15px
+		color $grey
+
+	&__weight
+		position absolute
+		right 12px
+		bottom 12px

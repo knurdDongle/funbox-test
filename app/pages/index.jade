@@ -1,0 +1,55 @@
+extends /blocks/layout-default/layout-default
+
+include /blocks/main/main
+include /blocks/center/center
+include /blocks/title/title
+include /blocks/product/product
+include /blocks/card/card
+include /blocks/weight/weight
+include /blocks/link/link
+
+block head
+	- var pageTitle = 'Funbox test';
+
+block content
+	+main
+		+center
+
+			+title
+				| Ты сегодня покормил кота?
+
+			+product
+				+card('Сказочное заморское яство', 'Нямушка', 'с фуа-гра', '<b>10</b> порций <br> мышь в подарок')
+					+weight('0,5', 'кг').__weight
+				+e.buy
+					| Чего сидишь? Порадуй котэ,
+					+link(href='javascript:void(0);')
+						| купи.
+				+e.info
+					| Печень утки разварная с артишоками.
+				+e.unavailable
+					| Печалька, с фуа-гра закончился.
+
+			+product
+				+card('Сказочное заморское яство', 'Нямушка', 'с рыбой', '<b>40</b> порций <br> <b>2</b> мыши в подарок')
+					+weight('2', 'кг').__weight
+				+e.buy
+					| Чего сидишь? Порадуй котэ,
+					+link(href='javascript:void(0);')
+						| купи.
+				+e.info
+					| Головы щучьи с чесноком да свежайшая сёмгушка.
+				+e.unavailable
+					| Печалька, с рыбой закончился.
+
+			+product._state_disabled
+				+card('Сказочное заморское яство', 'Нямушка', 'с курой', '<b>100</b> порций <br> <b>5</b> мышей в подарок <br> заказчик доволен')
+					+weight('5', 'кг').__weight
+				+e.buy
+					| Чего сидишь? Порадуй котэ,
+					+link(href='javascript:void(0);')
+						| купи.
+				+e.info
+					| Филе из цыплят с трюфелями в бульоне.
+				+e.unavailable
+					| Печалька, с курой закончился.

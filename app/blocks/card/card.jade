@@ -1,0 +1,15 @@
+mixin card(label, title, descr, specs)
+	+b.card&attributes(attributes)
+		+e.bg
+			+e.inner
+				+e.question
+					| Котэ не одобряет?
+				+e.label
+					| #{ label }
+				+e.title
+					| #{ title }
+				+e.descr
+					| #{ descr }
+				+e.specs
+					| !{ specs }
+			block

@@ -1,0 +1,82 @@
+.product
+	margin-x 20px
+	margin-bottom 20px
+	display inline-block
+	width 320px
+	height 520px
+
+	+above(1080px)
+		margin-x 15px
+
+	+above(1200px)
+		margin-x 40px
+
+	// MODIFIERS (states)
+
+	// State "disabled"
+	&_state_disabled .card
+		cursor default
+
+	&_state_disabled .card,
+	&_state_disabled .card:hover,
+	&_state_disabled .weight
+		background-color $light-grey
+
+	&_state_disabled .card__title,
+	&_state_disabled .card__descr
+		color $grey
+
+	&_state_disabled .card__inner
+		opacity .5
+
+	&_state_disabled &__buy
+		display none
+
+	&_state_disabled &__unavailable
+		display block
+
+	// State "hovered"
+	&_state_hovered .card,
+	&_state_hovered .weight
+		background-color $light-blue
+
+	// State "selected"
+	&_state_selected .card,
+	&_state_selected .weight
+		background-color $red
+
+	&_state_selected &__info
+		display block
+
+	&_state_selected &__buy
+		display none
+
+	&_state_selected&_state_hovered .card,
+	&_state_selected&_state_hovered .weight
+		background-color $light-red
+
+	&_state_selected&_state_hovered .card__question
+		display block
+
+	&_state_selected&_state_hovered .card__label
+		display none
+
+	// ELEMENTS
+
+	&__buy,
+	&__info,
+	&__unavailable
+		margin-top 15px
+		font-family trebuchet-ms
+		font-size 13px
+
+	&__buy
+		color #fff
+
+	&__info
+		display none
+		color #fff
+
+	&__unavailable
+		display none
+		color #ffff66

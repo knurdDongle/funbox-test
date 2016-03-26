@@ -1,0 +1,18 @@
+.main
+
+	&:before,
+	&:after
+		position fixed
+		z-index -1
+		display block
+		width 100%
+		height 50%
+		content ''
+
+	&:before
+		top 0
+		background-image linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0))
+
+	&:after
+		bottom 0
+		background-image linear-gradient(360deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0))
